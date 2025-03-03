@@ -24,3 +24,23 @@ metricCardsArray.forEach(card => {
     card.innerHTML += " - Updated";
     card.style.backgroundColor = "#d4edda";
 });
+
+
+// Task 3: Dynamic Inventory Management – Adding and Removing Items
+
+// Select the inventory list
+const inventoryList = document.getElementById("inventoryList");
+
+// Function to add an inventory item
+function addInventoryItem(itemName) {
+    const item = document.createElement("li");
+    item.setAttribute("class", "product-item");
+    item.innerText = itemName;
+    item.addEventListener("click", () => removeInventoryItem(item));
+    inventoryList.appendChild(item);
+}
+
+// Function to remove an inventory item
+function removeInventoryItem(item) {
+    inventoryList.removeChild(item);
+}
