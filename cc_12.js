@@ -11,3 +11,16 @@ revenueCard.innerHTML = "<h3>Revenue</h3><p>$0</p>";
 
 // Append the new metric card to the dashboard
 dashboard.appendChild(revenueCard);
+
+
+// Task 2: Updating Dashboard Metrics – Working with NodeLists and Arrays
+
+// Select all metric cards
+const metricCards = document.querySelectorAll(".metric-card");
+const metricCardsArray = Array.from(metricCards);
+
+// Update each card’s inner text and style
+metricCardsArray.forEach(card => {
+    card.innerHTML += " - Updated";
+    card.style.backgroundColor = "#d4edda";
+});
