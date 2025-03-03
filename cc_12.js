@@ -3,14 +3,19 @@
 // Select the dashboard container
 const dashboard = document.getElementById("dashboard");
 
-// Create a new metric card for Revenue
-const revenueCard = document.createElement("div");
-revenueCard.setAttribute("class", "metric-card");
-revenueCard.setAttribute("id", "revenueCard");
-revenueCard.innerHTML = "<h3>Revenue</h3><p>$0</p>";
+// Function to create metric cards dynamically
+function createMetricCard(id, title, value) {
+    const card = document.createElement("div");
+    card.setAttribute("class", "metric-card");
+    card.setAttribute("id", id);
+    card.innerHTML = `<h3>${title}</h3><p>${value}</p>`;
+    dashboard.appendChild(card);
+}
 
-// Append the new metric card to the dashboard
-dashboard.appendChild(revenueCard);
+// Create Revenue, Profit, and Expenses cards
+createMetricCard("revenueCard", "Revenue", "$3000");
+createMetricCard("profitCard", "Profit", "$2000");
+createMetricCard("expensesCard", "Expenses", "$0");
 
 
 // Task 2: Updating Dashboard Metrics – Working with NodeLists and Arrays
@@ -72,5 +77,7 @@ customerSection.addEventListener("click", () => {
 });
 
 // Add some initial customer cards
-addCustomerCard("Jenny Tran");
-addCustomerCard("Jaden Ly");
+addCustomerCard("Customer 1");
+addCustomerCard("Customer 2");
+addCustomerCard("Customer 3");
+addCustomerCard("Customer 4");
