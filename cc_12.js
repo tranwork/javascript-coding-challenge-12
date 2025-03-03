@@ -44,3 +44,33 @@ function addInventoryItem(itemName) {
 function removeInventoryItem(item) {
     inventoryList.removeChild(item);
 }
+
+
+// Task 4: Business Customer Section – Handling Event Bubbling
+
+// Select the customer section
+const customerSection = document.getElementById("customerSection");
+
+// Function to create a customer card
+function addCustomerCard(customerName) {
+    const card = document.createElement("div");
+    card.setAttribute("class", "customer-card");
+    card.innerText = customerName;
+    
+    // Prevent event bubbling
+    card.addEventListener("click", (event) => {
+        console.log("Customer card clicked");
+        event.stopPropagation();
+    });
+    
+    customerSection.appendChild(card);
+}
+
+// Event listener for the customer section (demonstrating event bubbling)
+customerSection.addEventListener("click", () => {
+    console.log("Customer section clicked");
+});
+
+// Add some initial customer cards
+addCustomerCard("Jenny Tran");
+addCustomerCard("Jaden Ly");
